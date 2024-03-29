@@ -7,6 +7,11 @@
 		{% if name %}
 		<p>Hi, <a href="https://www.strava.com/athletes/{{ id }}">{{ name }}</a></p>
 		<p>You've done Green {{ greens }} times! Log out and log back in to update your stats.</p>
+		{% if nextUndoneGreenDay %}
+			<p>Your next upcoming Green grid day is {{ nextUndoneGreenDay }}</p>
+		{% else %}
+			<p>You have completed your Green grid, congratulations!</p>
+		{% endif %}
 		{% else %}
 		<p><a href='{{ url }}'><img style="vertical-align:middle" src="/media/btn_strava_connectwith_orange.svg" alt="Connect with Strava" /></a> to view how many times you've done Green.</p>
 		{% endif %}
